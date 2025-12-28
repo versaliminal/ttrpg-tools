@@ -1,5 +1,8 @@
 # ttrpg-tools
-Tools for building / running Table-Top Roleplaying Games (TTRPGs)
+Tools for managing and publishing content for Table-Top Roleplaying Games (TTRPGs)
+
+Rendered examples:
+ [Example PDF](docs/examples/example.pdf)  
 
 # Setup
 ## Python environment
