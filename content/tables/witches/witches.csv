@@ -1,7 +1,7 @@
 "Number","Name","Blurb","Image","Weapon","Weapon Desc","Weapon Stats","Item 1","Item 1 Desc","Item 2","Item 2 Desc","Passion","Passion Desc","Craft","Craft Desc","Omen","Omen Desc","Table 1 (yaml)","Table 2 (yaml)","Table 3 (yaml)"
 "1","Poesy","Sacrifice, Meridian, Bounty","poesy.jpg","Flail","A persuasive thresher","d6, Hefty","Flower Crown","No weather or terrain may impede you; A1","Mourning Locket","Contains 3 strange seeds","Aesthetics","whenever a beautiful outcome is chosen over a simple or pratical one","Conflagration","Conjure a flame between yourself and a target. The flames will spread quickly if able, but will always leave open a single path for you to retreat safely. Anyone caught in the flames takes \statBlock{2d6} damage.","The Story","You become absorbed in a story told, unbidden, by a woman you have never seen before. When it ends you find yourself alone in wilderness.","title: Crown Description
 type: random
-format: cllx
+format: cXX
 headers:
   - Flower
   - Implication
@@ -11,7 +11,7 @@ rows:
   - [Foxglove, Protection]
   - [Peony, Jealousy]","title: Seed Effects
 type: select
-format: lxl
+format: XX
 headers: 
   - Appearance
   - Effect
@@ -21,7 +21,7 @@ rows:
   - [Barbed, Grows snaring vines]
   - [Charred, Restore VIG to 6]","title: A Past Sacrifice
 type: select
-format: lxl
+format: XX
 headers:
   - Token
   - Emotion
@@ -32,7 +32,7 @@ rows:
   - [A Broken Blade, Dispair]"
 "2","Prolix","Excess, Plattitue, Obfuscation","placeholder.jpg","Cudgel","Adorned with a carving of an alert crow","d8, Hefty","Copper Chalice","Those who drink from it can not harm you","Worn Tome","Filled with endless inscrutable litanies","Excess","whenever an action is continued well beyond it's logical completion","Logorrhea","Render a target unable to stop speaking until you command it. During this period their clarity is reduced to 1.","The Fox","A red fox approaches and clearly beckons you to a hole in the side of a low hill. Inside is a roiling mass of rabbits, uncountable in number.","title: Chalice Description
 type: random
-format: cllx
+format: cXX
 headers:
   - Origin
   - Acquired by
@@ -42,7 +42,7 @@ rows:
   - [Coven, Inheritance]
   - [Peasant, Theft]","title: Litany Effects
 type: select
-format: lxl
+format: XX
 headers:
   - Title
   - Elicits
@@ -52,7 +52,7 @@ rows:
   - [Quiet Hands, Rage]
   - [Long Shadows, Panic]","title: Grating Habbits
 type: select
-format: lxl
+format: XX
 headers:
   - Ticks
   - Unusual Aspect
@@ -63,7 +63,7 @@ rows:
   - [Wheezing, Memory]"
 "3","Volta","Emotion, Change, Soul","placeholder.jpg","Maul","Cleaver of uncountable stones","2d10, Slow","Patinated Dagger","Inspires others to reckless action","Labrys Token","Holds mesmirizing worth","Undercutting","whenever an action is taken which weakens an assumption or tradition","Aberrance","Choose a mundane, non-violent, action to have a possible but improbable outcome","The Blood","In a vicious robbery, the slender man next to you is stabbed deep in the chest with a dagger. As the blade is pulled free, it is followed by a spray of glittering, golden blood.","title: Dagger Description
 type: random
-format: cllx
+format: cXX
 headers:
   - Shape
   - Origin
@@ -73,7 +73,7 @@ rows:
   - [Slender, A marauder]
   - [Fractured, Beyond History]","title: Token Trades
 type: select
-format: lxl
+format: XX
 headers:
   - Example Trade
 rows:
@@ -83,7 +83,7 @@ rows:
   - [Midlle authority]",""
 "4","Mora","Sound, Movement, Timing","placeholder.jpg","Small Shield","A small shield of taut leather around scarred iron spikes","d6, A1, Hefty","Flying Ointment","Your spirit becomes unbound from your body and takes flight","Small Drum","Produces unearthly sounds when struck","Recurrance","whenever an action repeated across unrelated circumstances","Resonance","Non-attack actions repeated without interruption gain strength rapidly","","","title: Ointment Description
 type: random
-format: cllx
+format: cXX
 headers:
   - Smell
   - Spirit-Shape
@@ -93,7 +93,7 @@ rows:
   - [Sweet Herbs, Yourself, naked]
   - [Decay, A dark void]","title: Drum Effects
 type: select
-format: lxl
+format: XX
 headers:
   - Sound
   - Effect
