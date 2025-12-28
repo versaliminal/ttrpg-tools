@@ -1,0 +1,47 @@
+\startWitchPage{{ args(raw['Number'], raw['Name'], raw['Blurb'], raw['Image']) }}
+
+\aspectCallout{Possessions}{
+    \itemName{{ args(raw['Weapon'], raw['Weapon Desc'] + ' \statBlock' + arg(raw['Weapon Stats'])) }}
+    \itemName{{ args(raw['Item 1'], raw['Item 1 Desc']) }}
+    \itemName{{ args(raw['Item 2'], raw['Item 2 Desc']) }}
+}
+
+\aspectCallout{Passion}{
+    \itemName{{ args(raw['Passion'], 'Restores \SPI ' + raw['Passion Desc']) }}
+}
+
+\aspectCallout{Craft}{
+    \itemName{{ args(raw['Craft'], raw['Craft Desc']) }}
+}
+
+\aspectCallout{Initiating Omen}{
+    \itemName{{ args(raw['Omen'], raw['Omen Desc']) }}
+}
+
+\switchcolumn
+
+{% for i in range(1,6) %}
+{%- set key = 'Table ' + i | string -%}
+{%- if parsed[key] -%}
+{% set e = parsed[key] -%}
+\startTable{{ args(e['title'], e['format']) }}
+    {%- if e['type'] == 'select' %}
+    {% for h in e['headers'] -%}\cvh{{ args(h) }} & {% endfor %} \tabularnewline
+    {% for r in e['rows'] -%}
+        {% if loop.index % 2 == 0 %}\emphrow
+    {% endif -%}
+        {% for c in r %}{{ c }} & {% endfor %} \tabularnewline
+    {% endfor -%}
+{% else %}
+    \die{fourside}{} & {% for h in e['headers'] -%}\cvh{{ args(h) }} & {% endfor %} \tabularnewline
+    {% for r in e['rows'] -%}
+        {% if loop.index % 2 == 0 %}\emphrow
+    {% endif -%}
+        \rvh{{ arg(loop.index) }} & {% for c in r %}{{ c }} & {% endfor %} \tabularnewline
+    {% endfor -%}
+{% endif -%}
+\finishTable
+{% endif %}
+{% endfor -%}
+
+\finishWitchPage

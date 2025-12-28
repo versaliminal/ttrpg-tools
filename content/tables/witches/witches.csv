@@ -1,0 +1,120 @@
+"Number","Name","Blurb","Image","Weapon","Weapon Desc","Weapon Stats","Item 1","Item 1 Desc","Item 2","Item 2 Desc","Passion","Passion Desc","Craft","Craft Desc","Omen","Omen Desc","Table 1 (yaml)","Table 2 (yaml)","Table 3 (yaml)"
+"1","Poesy","Sacrifice, Meridian, Bounty","poesy.jpg","Flail","A persuasive thresher","d6, Hefty","Flower Crown","No weather or terrain may impede you; A1","Mourning Locket","Contains 3 strange seeds","Aesthetics","whenever a beautiful outcome is chosen over a simple or pratical one","Conflagration","Conjure a flame between yourself and a target. The flames will spread quickly if able, but will always leave open a single path for you to retreat safely. Anyone caught in the flames takes \statBlock{2d6} damage.","The Story","You become absorbed in a story told, unbidden, by a woman you have never seen before. When it ends you find yourself alone in wilderness.","title: Crown Description
+type: random
+format: cllx
+headers:
+  - Flower
+  - Implication
+rows:
+  - [Mandrake, Secrets]
+  - [Iris, Guidance]
+  - [Foxglove, Protection]
+  - [Peony, Jealousy]","title: Seed Effects
+type: select
+format: lxl
+headers: 
+  - Appearance
+  - Effect
+rows:
+  - [Wrinkled, Aging poison]
+  - [Pungent, Steals memories]
+  - [Barbed, Grows snaring vines]
+  - [Charred, Restore VIG to 6]","title: A Past Sacrifice
+type: select
+format: lxl
+headers:
+  - Token
+  - Emotion
+rows:
+  - [Charred Bones, Forgiveness]
+  - [A Plain Ring, Anger]
+  - [Strands of Hair, Longing]
+  - [A Broken Blade, Dispair]"
+"2","Prolix","Excess, Plattitue, Obfuscation","placeholder.jpg","Cudgel","Adorned with a carving of an alert crow","d8, Hefty","Copper Chalice","Those who drink from it can not harm you","Worn Tome","Filled with endless inscrutable litanies","Excess","whenever an action is continued well beyond it's logical completion","Logorrhea","Render a target unable to stop speaking until you command it. During this period their clarity is reduced to 1.","The Fox","A red fox approaches and clearly beckons you to a hole in the side of a low hill. Inside is a roiling mass of rabbits, uncountable in number.","title: Chalice Description
+type: random
+format: cllx
+headers:
+  - Origin
+  - Acquired by
+rows:
+  - [Royalty, Violent Overthrow]
+  - [Troll, Sacrifice]
+  - [Coven, Inheritance]
+  - [Peasant, Theft]","title: Litany Effects
+type: select
+format: lxl
+headers:
+  - Title
+  - Elicits
+rows:
+  - [Between Stars, Avarice]
+  - [Through Winter, Confusion]
+  - [Quiet Hands, Rage]
+  - [Long Shadows, Panic]","title: Grating Habbits
+type: select
+format: lxl
+headers:
+  - Ticks
+  - Unusual Aspect
+rows:
+  - [Throat Clearing, Body Language]
+  - [Humming, Speech]
+  - [Spitting, Eye Contact]
+  - [Wheezing, Memory]"
+"3","Volta","Emotion, Change, Soul","placeholder.jpg","Maul","Cleaver of uncountable stones","2d10, Slow","Patinated Dagger","Inspires others to reckless action","Labrys Token","Holds mesmirizing worth","Undercutting","whenever an action is taken which weakens an assumption or tradition","Aberrance","Choose a mundane, non-violent, action to have a possible but improbable outcome","The Blood","In a vicious robbery, the slender man next to you is stabbed deep in the chest with a dagger. As the blade is pulled free, it is followed by a spray of glittering, golden blood.","title: Dagger Description
+type: random
+format: cllx
+headers:
+  - Shape
+  - Origin
+rows:
+  - [Curved, Mournful Fisherman]
+  - [Jagged, A king of Dwarves]
+  - [Slender, A marauder]
+  - [Fractured, Beyond History]","title: Token Trades
+type: select
+format: lxl
+headers:
+  - Example Trade
+rows:
+  - [Rare and Special Items]
+  - [Passage and guidance]
+  - [Short-term service]
+  - [Midlle authority]",""
+"4","Mora","Sound, Movement, Timing","placeholder.jpg","Small Shield","A small shield of taut leather around scarred iron spikes","d6, A1, Hefty","Flying Ointment","Your spirit becomes unbound from your body and takes flight","Small Drum","Produces unearthly sounds when struck","Recurrance","whenever an action repeated across unrelated circumstances","Resonance","Non-attack actions repeated without interruption gain strength rapidly","","","title: Ointment Description
+type: random
+format: cllx
+headers:
+  - Smell
+  - Spirit-Shape
+rows:
+  - [Body Odor, Hippogryph]
+  - [Sour Beer, Scattered lights]
+  - [Sweet Herbs, Yourself, naked]
+  - [Decay, A dark void]","title: Drum Effects
+type: select
+format: lxl
+headers:
+  - Sound
+  - Effect
+rows:
+  - [Sloshing, a]
+  - [Screech, b]
+  - [Cough, c]
+  - [Howl, d]",""
+"5","Calx","Industry, Permanence, Might","placeholder.jpg","Brick Hammer","Heavy, but you are unburdened","d8, Hefty","Iron Tongs","Those grasped are greatly weakened","Incantation Bowl","Inscriptions imbue liquid contained","Finality","whenever an action is taken which brings clear end to something","Entomb","Trap an object placed on/in the ground from ever being retrieved","","","","",""
+"6","Marl","Earth, Growth, Decay","placeholder.jpg","Pitchfork","Plain and worn, but clearly not a peasants tool","d6, Hefty","Bramble Cloak","Plants grow miraculously at your command; A1","Beetle Brooch","","Pacifism","whenever a peaceful solution is chosen over violence","","","","","","",""
+"7","Castigation","Punishment, Intent, Census","placeholder.jpg","Mace","Cruel flanges in glimmering bronze","d8, Hefty","Branding Iron","Leaves an invisible mark which fosters strong reactions","Bloodletter's Blade","","","","","","","","","",""
+"8","Crux","Corruption, Loss, Perplexity","placeholder.jpg","Hatchet","Intricately carved bone handle with insets with moonstone","d6, Hefty","Decorative Scars","Your max GD can not be lower than 6, ignore scar rolls; A1","","","","","","","","","","",""
+"9","Bridge","Vengence, Commitment, Terror","placeholder.jpg","Pike","Its pale shaft bears a dark stain of old blood","d8, Hefty","Iron Crown","Your appearance becomes monsterous at will; A1","Tattered pouch","Contains a silver nail","","","","","The Nod","Working through a crowded square, you are struck by a sudden stillness and silence. A woman locks eyes with you and with only a nod tells you something you do not want to know.","","",""
+"10","Entrenchment","Fortification, Foundation, Impassiveness","placeholder.jpg","Heavy Shield","A wall of wood, bone, and mud","A3, Slow","Salt Chains","Render any passageway inpenetrable or prevent any object from being moved","","","","","","","","","","",""
+"11","Exaction","Assertion, Averice, Impact","placeholder.jpg","Light Sword","Twin edges gleam with a portent of violence","d10, Long","Web Sack","Easily stretched, contents have no apparent volume or weight","Bronze Scales","","","","","","","","","",""
+"12","Supplication","Plea, Process, Recitation","placeholder.jpg","Lance","Stout and tipped with scaled iron","d10, Long","Goddess Figure","","Offering Bowl","","","","","","","","","",""
+"13","Umbra","Shadow, Secrecy, Transience","placeholder.jpg","Bent Dagger","Deadly and easily concealed","d8","Ancient Seal","Impress on a document to bestow authority","Shackles","Conform to any size and require no key","Revolt","","Shadow","Create a static shadow which will not be noticed as unnatural","The Quake","You come upon a meager home, but as you approach the earth shakes violently, collapsing the structure. A moan emanates from the ruins.","","",""
+"14","Hinterlight","Ritual, Finality, Security","placeholder.jpg","Medium Shield","Bares the crest of a once proud knight","d4, A1, Hefty","Death Mask","See the last moments of the dead through its eyes","","","","","","","","","","",""
+"15","Bedlam","Mayhem, Diversion, Confusion","placeholder.jpg","Shortbow","It's crimson thread draws with light effort","d6, Long","Stone Skull","Belligerents are strangely drawn to it when exposed","Whistle","","","","","","","","","",""
+"16","Saros","Alignment, Precession, Repetition","placeholder.jpg","Axe","Double-bitted and adorned with crescents","d8, Hefty","Moon Brooch","With clear sky your vision is not impaired at night","","","","","","","","","","",""
+"17","Husk","Vaccancy, Eternity, Fathomlessness","placeholder.jpg","Billhook","Chipped and rusted blade cuts painfully","d10, Long","Crystaline Pebble","Contains a trapped soul which may embody a mundane object on demand","","","","","","","","","","",""
+"18","Viscera","Instinct, Reaction, Consequence","placeholder.jpg","Short Sword","Torn from the hands of a tarnished knight","2d6, Hefty","","","","","","","","","","","","",""
+"19","Tempest","Calamity, Prowess, Intemporance","placeholder.jpg","Pick Hammer","Knights grimace at its presence","d10, Long","Glass flask","Creates billowing fire when opened (2d8)","","","","","","","","","","",""
+"20","Disspipation","Renunciation, Silence, Control","placeholder.jpg","Curvebow","Its power requires great skill","2d6, Long","Worry Stone","Eases the worries of another when rubbed","","","","","","","","","","",""

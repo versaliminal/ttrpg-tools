@@ -1,0 +1,44 @@
+"Number","Name","Blurb","Omen 1","Omen 2","Omen 3","Omen 4","Omen 5","Omen 6","Cast 1 (yaml)","Cast 2 (yaml)","Cast 3 (yaml)","Cast 4 (yaml)","Cast 5 (yaml)","Random Table 1","Column 16"
+"1","The First Ruler","","Three aged nobles in ragged finery herald the rise of the First Ruler: \mythQuote{It travels to us now, from death unto it's birth. That which has never known skin. That which rightfully rules}","A strange Knight shares a horse with one alleged tax collector while another follows on foot: \mythQuote{Disperse and return to your masters land to work. The first ruler demands what he is due and all will face accounting.}","","Smoke billows from a small parcel of farmland while a Knight bearing the crest of local rule watches impassively: \mythQuote{All have conscripted to service and all will report. The usurper will see no harvest.}","In the distance is a clearly undisciplined warband herded by 4 knights. A decisive confrontation is near.","Guant peasants tend to fields previously burned. \\%
+
+Overseers for the First Ruler watch closely over the wordless sobs of a peasant locked in a nearby stockade. All will work, and work will not cease.","name: Aged Nobles
+attributes: 2 1 1 2
+armor: A0 (Ragged finery)
+weapons: Hand Axe \statBlock{d6}
+","name: Strange Knight
+attributes: 16 6 18 2
+armor: A2 (Mail and Shield)
+weapons: Staff \statBlock{d8 Long}, Dagger \statBlock{d4}","name: Tax Collectors / Overseers
+attributes: 8 6 11 4
+armor: A1 (Padded Clothes)
+weapons: PoleAxe \statBlock{d10, Long}
+","","name: The First Ruler
+attributes: 15 10 7 3
+armor: A1 (Inscribed Plate)
+weapons: Great Maul (2d10)
+","",""
+"2","The Waxen Slain","","A knight haggard from restless journey: \mythQuote{I live to cover my shadow with blood; Beware, I see in you that there is dirt enough to cover your graves}. Attempts to flee onward; In his wake, 3 slaughtered and dismembered.","Two waxen and rotting slain: \mythQuote{I do not know you.... but you may reach your hand into the shards of bone and know me}. They seek their killer and will not be swayed from vengence.","A burning shack and a dubious man hunted by an unrelenting slain woman: \mythQuote{His flesh... I demand it. It is dearly owed and I will have it}. The man claims she was set upon him by cruel miracle.","Four shackeled slain, shambling, driven by a youthful knight in filthy plate. He knows their secret and the use of the tokens.","A desolate tree strung with two nooses. A boy hangs by one and a man by the other, both motionless.","You are set upon by up to six persons you have slain this season. You remain hunted until all have been fully dealt with.","name: Haggard Knight
+attributes: 6 5 2 4
+armor: A2 (Mail and Helm)
+weapons: Pike \statBlock{d8, Long}
+","name: Waxen Slain
+attributes: 6 3 5 2
+armor: A4 (Tattered Clothes, Unliving Resilience)
+weapons: Rending grab \statBlock{d8}
+items: Moonstone token","name: Dubious Man
+attributes: 6 1 1 3
+armor: A1 (Padded Clothing)
+weapons: Dagger \statBlock{d6}
+","name: Youthful Knight
+attributes: 6 11 15 4
+armor: A2 (Plate, Buckler)
+weapons: Cudgel \statBlock{d8, hefty}, Dagger \statBlock{d6}
+items: Four moonstone tokens rendered smooth","name: Man and Boy
+attributes: 7/5 6/3 3/1 1/1
+","",""
+"3","The White Fountain","","Stars streak brightly across the sky. On the horizen, two flashes signal an earthly conclusion.","A crack in the earth blazes with dazzling light in waves of color utterly unfamiliar to you. A claimed wizard from another realm studies it intently.","Three black dogs converse in sputtering howls atop a large earthen mound. A witherd woman who is not a woman appraises you: \mythQuote{The ages of diminishing end... }","","","","","","","","","",""
+"4","","","","","","","","","","","","","","",""
+"5","","","","","","","","","","","","","","",""
+"6","","","","","","","","","","","","","","",""
+"7","","","","","","","","","","","","","","",""
+"8","","","","","","","","","","","","","","",""
