@@ -3,20 +3,21 @@ import argparse
 import csv
 import jinja2
 import os
-import re
 import shutil
 import urllib.request
 import yaml
 
-gsheets_url_format = '{url}/gviz/tq?tqx=out:csv&sheet={sheet}'
+GSHEETS_URL_FMT = '{url}/gviz/tq?tqx=out:csv&sheet={sheet}'
 
-sheet_path_format = '{root}/tables/{project}/{sheet}.csv'
-template_dir_format = '{root}/templates/{project}'
-rendered_path_format = '{root}/rendered/{project}/{output}'
+PROJECT_DIR_FMT = '{root}/{project}'
+TABLE_PATH_FMT = '{project_dir}/tables/{table}'
+TEMPLATE_PATH_FMT = '{project_dir}/templates/{template}'
+RENDERED_PATH_FMT = '{project_dir}/rendered/{output}'
+INCLUDES_FILE = 'includes.tex'
 
-include_format = '\\include{{rendered/{output}}}\n'
+INCLUDE_FMT = '\\include{{rendered/{output}}}\n'
 
-yaml_tag = '(yaml)'
+YAML_TAG = '(yaml)'
 
 def read_conifg(filename, project):
     print("Loading projects file: {0}".format(filename))
@@ -25,29 +26,29 @@ def read_conifg(filename, project):
         if project in config:
             return config[project]
 
-def refresh_sources(root, project, config):
-    project_dir = "{0}/tables/{1}".format(root, project)
+def refresh_sources(project_dir, config):
     try:
         os.mkdir(project_dir)
+        os.mkdir(TABLE_PATH_FMT.format(""))
     except FileExistsError:
         pass
     if not config['gsheets_url']:
         print("No remote configured, skipping refresh")
         return
     for entry in config['inputs']:
-        url = gsheets_url_format.format(url=config['gsheets_url'], sheet=entry['sheet'])
-        output = "{0}/{1}.csv".format(project_dir, entry['sheet'].lower())
+        url = GSHEETS_URL_FMT.format(url=config['gsheets_url'], sheet=entry['sheet'])
+        output = TABLE_PATH_FMT.format(project_dir=project_dir, table=entry['table'])
         print("  * Downloading {0} sheet to {1}".format(entry['sheet'], output))
         try:
             urllib.request.urlretrieve(url, output)
         except Exception as e:
             print("\t- Error downloading file:", e)
 
-def clear_rendered(root, project):
-    project_dir = "{0}/rendered/{1}".format(root, project)
-    if os.path.exists(project_dir):
-        shutil.rmtree(project_dir)
-    os.mkdir(project_dir)
+def clear_rendered(project_dir):
+    rendered_dir = RENDERED_PATH_FMT.format("")
+    if os.path.exists(rendered_dir):
+        shutil.rmtree(rendered_dir)
+    os.mkdir(rendered_dir)
 
 def jinja_to_latex_arg(content):
     if content:
@@ -60,36 +61,36 @@ def jinja_to_latex_arg(content):
 def jinja_to_latex_args(*args):
     return "".join(map(jinja_to_latex_arg, args))
 
-def render_templates(content_root, project, config):
+def render_templates(project_dir, config):
     for entry in config['inputs']:
-        render_template(content_root, project, entry['sheet'], entry['template'])
+        render_template(project_dir, entry['table'], entry['template'])
 
-def render_template(content_root, project, sheet_name, template_name):
-    includes_file_path = rendered_path_format.format(root=content_root, project=project, output='includes.tex')
+def render_template(project_dir, table_name, template_name):
+    includes_file_path = RENDERED_PATH_FMT.format(project_dir=project_dir, output=INCLUDES_FILE)
     includes_file = open(includes_file_path, 'a')
 
-    sheet_file_path = sheet_path_format.format(root=content_root, project=project, sheet=sheet_name)
-    with open(sheet_file_path, 'r', newline='') as csv_file:
-        reader = csv.DictReader(csv_file)
+    table_file_path = TABLE_PATH_FMT.format(project_dir=project_dir, table=table_name)
+    with open(table_file_path, 'r', newline='') as table_file:
+        reader = csv.DictReader(table_file)
 
-        template_dir = template_dir_format.format(root=content_root, project=project)
+        template_dir = TEMPLATE_PATH_FMT.format(project_dir=project_dir, template=template_name)
         env = jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir))
         env.globals.update(arg=jinja_to_latex_arg, args=jinja_to_latex_args)
         template = env.get_template(template_name)
 
         for row in reader:
             output_file_name = "{0}-{1}.tex".format(row['Number'], row['Name'])
-            output_file_path = rendered_path_format.format(root=content_root, project=project, output=output_file_name)
+            output_file_path = RENDERED_PATH_FMT.format(project_dir=project_dir, output=output_file_name)
             
-            includes_file.write(include_format.format(output=output_file_name))
+            includes_file.write(INCLUDE_FMT.format(output=output_file_name))
             print("  * Rendering {0}".format(output_file_name))
             with open(output_file_path, 'w') as tex_file:
                 parsed_cols = {}
                 for k, v in row.items():
                     if not v:
                         continue
-                    if k.endswith(yaml_tag):
-                        name = k.replace(yaml_tag, '').strip()
+                    if k.endswith(YAML_TAG):
+                        name = k.replace(YAML_TAG, '').strip()
                         parsed_cols[name] = yaml.safe_load(v)
                 tex_file.write(template.render(raw=row, parsed=parsed_cols))
         includes_file.close()
@@ -105,14 +106,15 @@ if __name__ == '__main__':
     content_root="{0}/content".format(args.root)
     config_file = "{0}/projects.yaml".format(content_root)
     config = read_conifg(config_file, args.project)
+    project_dir = PROJECT_DIR_FMT.format(root=content_root, project=args.project)
 
     if args.refresh:
         print("Refreshing sources...")
-        refresh_sources(content_root, args.project, config)
+        refresh_sources(project_dir, config)
     
-    clear_rendered(content_root, args.project)
+    clear_rendered(project_dir)
     print("Rendering templates...")
-    render_templates(content_root, args.project, config)
+    render_templates(project_dir, config)
 
     
 
