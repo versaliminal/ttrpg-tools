@@ -4,6 +4,10 @@
 \makeindex
 
 \begin{document}
+\newgeometry{left=0pt,bottom=0pt,top=0pt,left=0pt}
+\includegraphics[height=10.99in]{img/title.png}\newpage
+\clearpage
+\restoregeometry
 
 \fancyhead{}
 \renewcommand{\headrulewidth}{0pt}
@@ -21,11 +25,11 @@
     {\large \color{MidGrey} VERSALIMINAL Press}
 }
 
-\bigskip
-\bigskip
-\begin{center}
-    \includegraphics[width=\textwidth]{img/title.png}\newpage
-\end{center}
+%\begin{tikzpicture}[remember picture,overlay]
+%    \draw[line width=5pt, color=VLRed]
+%        ($(current page.north west) + (10pt,-10pt)$) rectangle
+%        ($(current page.south east) + (-10pt,10pt)$);
+%\end{tikzpicture}
 
 \rulesHeader
 

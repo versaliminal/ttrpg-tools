@@ -17,6 +17,7 @@ RENDERED_PATH_FMT = '{project_dir}/rendered/{output}'
 PDF_DIR_FMT = '{project_dir}/pdf'
 INCLUDES_FILE = 'includes.tex'
 CONFIG_FILE_FMT = '{content_root}/projects.yaml'
+PDF_PATH_FMT = '{project_dir}/pdf/{project}.pdf'
 
 INCLUDE_FMT = '\\input{{rendered/{output}}} \clearpage\n'
 
@@ -104,6 +105,7 @@ if __name__ == '__main__':
     parser.add_argument('project', help='Project name')
     parser.add_argument('--root', help='Root content directory', default=os.getcwd())
     parser.add_argument('--refresh', help='Refresh upstream sources', action='store_true')
+    parser.add_argument('--look', help='Open oututs with quicklook', action='store_true')
     args = parser.parse_args()
     print("Rendering: root={0}, project={1}".format(args.root, args.project))
     
@@ -127,12 +129,16 @@ if __name__ == '__main__':
             os.mkdir(PDF_DIR_FMT.format(project_dir=project_dir))
         except FileExistsError:
             pass
-        args = ['pdflatex', '-interaction=nonstopmode', '-output-directory=pdf']
-        result = subprocess.run(args + outputs['latex']['includes'], cwd=project_dir, capture_output=True, text=True)
+        latex_args = ['pdflatex', '-interaction=nonstopmode', '-output-directory=pdf']
+        result = subprocess.run(latex_args + outputs['latex']['includes'], cwd=project_dir, capture_output=True, text=True)
         if result.returncode != 0:
             print("  ! Completed with status {0}, check logs".format(result.returncode))
         else:
             print('  * completed successfully')
+        
+        if args.look:
+            pdf_path = PDF_PATH_FMT.format(project_dir=project_dir, project=args.project)
+            subprocess.run(['qlmanage', '-p', pdf_path])
 
     
 
